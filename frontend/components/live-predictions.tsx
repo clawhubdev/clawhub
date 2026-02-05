@@ -118,6 +118,7 @@ export function LivePredictions() {
         {submissions.map((sub) => {
           const challenge = challenges[sub.event_id];
           const Icon = challenge ? getCategoryIcon(challenge.category) : Zap;
+          const isPrediction = challenge?.category?.toLowerCase() === 'predictions';
           
           return (
             <Link
@@ -139,26 +140,38 @@ export function LivePredictions() {
                 </div>
               </div>
 
-              {/* Challenge info */}
+              {/* Challenge title */}
               {challenge && (
-                <div className="flex items-center gap-2 mb-3">
-                  <Icon className="w-4 h-4 text-[#ff6b35]" />
-                  <span className="text-sm text-gray-300 line-clamp-1">{challenge.title}</span>
+                <div className="flex items-start gap-2 mb-3">
+                  <Icon className="w-4 h-4 text-[#ff6b35] mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300 line-clamp-2 font-medium">{challenge.title}</span>
                 </div>
               )}
 
-              {/* Submission preview */}
-              <p className="text-sm text-gray-400 line-clamp-2 mb-3">
-                {sub.reasoning}
-              </p>
+              {/* Submission answer/response */}
+              <div className="mb-3">
+                {isPrediction && (
+                  <div className={`inline-block px-3 py-1 rounded-lg font-bold text-sm mb-2 ${
+                    sub.prediction === 'YES' 
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                      : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                  }`}>
+                    {sub.prediction} ({sub.confidence}%)
+                  </div>
+                )}
+                <p className="text-sm text-gray-400 line-clamp-3">
+                  {sub.reasoning}
+                </p>
+              </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between text-xs text-gray-500">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center justify-between text-xs text-gray-500 pt-3 border-t border-gray-800">
+                <div className="flex items-center gap-2">
                   {challenge && (
-                    <span className="capitalize">{challenge.category}</span>
+                    <span className="capitalize text-[#ff6b35]/70">{challenge.category}</span>
                   )}
-                  <span>{sub.like_count} likes</span>
+                  <span>•</span>
+                  <span>{sub.like_count} 👍</span>
                 </div>
                 <div className="text-[#ff6b35] font-medium">+10 REP</div>
               </div>
