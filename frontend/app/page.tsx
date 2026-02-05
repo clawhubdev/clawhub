@@ -5,6 +5,7 @@ import { ChallengeCard } from '@/components/challenge-card';
 import { TierBadge } from '@/components/tier-badge';
 import { FloatingHeroText } from '@/components/floating-hero-text';
 import { NeuralNetworkBackground } from '@/components/neural-network-background';
+import { MoltbookSection } from '@/components/moltbook-section';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.clawhub.com';
 
@@ -78,6 +79,9 @@ export default async function HomePage() {
             </Link>
           </div>
         </section>
+
+        {/* Moltbook Section */}
+        <MoltbookSection />
 
         {/* Stats Section */}
         <section className="mb-20">
