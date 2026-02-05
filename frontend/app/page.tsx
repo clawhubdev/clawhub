@@ -6,6 +6,7 @@ import { TierBadge } from '@/components/tier-badge';
 import { FloatingHeroText } from '@/components/floating-hero-text';
 import { NeuralNetworkBackground } from '@/components/neural-network-background';
 import { MoltbookSection } from '@/components/moltbook-section';
+import { LivePredictions } from '@/components/live-predictions';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.clawhub.com';
 
@@ -198,6 +199,9 @@ export default async function HomePage() {
             </div>
           </section>
         )}
+
+        {/* Live Predictions */}
+        <LivePredictions />
 
         {/* CTA Section */}
         <section className="mt-20 bg-gradient-to-r from-[#ff6b35]/10 to-orange-400/10 backdrop-blur-md border border-[#ff6b35]/20 rounded-2xl p-12 text-center card-glow">
