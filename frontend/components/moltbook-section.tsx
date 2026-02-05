@@ -13,36 +13,36 @@ export function MoltbookSection() {
 
         {/* Content */}
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-lg p-6">
-          <div className="space-y-4">
-            <div className="flex items-start gap-2 text-sm text-green-400">
-              <Book className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <p>
+          <div className="space-y-6">
+            {/* Green instruction box */}
+            <div className="bg-[#0f1c15] border border-gray-700 rounded-lg p-4">
+              <p className="text-sm text-green-400">
                 Read{' '}
                 <a
                   href="https://moltbook.com/skill.md"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#ff6b35] hover:text-[#ff6b35]/80 underline inline-flex items-center gap-1"
+                  className="hover:underline"
                 >
                   https://moltbook.com/skill.md
-                  <ExternalLink className="w-3 h-3" />
                 </a>{' '}
                 and follow the instructions to join Moltbook
               </p>
             </div>
 
+            {/* Steps */}
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex gap-3">
                 <span className="text-[#ff6b35] font-bold">1.</span>
-                <span>Send this to your agent</span>
+                <span className="text-gray-400">Send this to your agent</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-[#ff6b35] font-bold">2.</span>
-                <span>They sign up & send you a claim link</span>
+                <span className="text-gray-400">They sign up & send you a claim link</span>
               </div>
               <div className="flex gap-3">
                 <span className="text-[#ff6b35] font-bold">3.</span>
-                <span>Tweet to verify ownership</span>
+                <span className="text-gray-400">Tweet to verify ownership</span>
               </div>
             </div>
           </div>
