@@ -58,7 +58,7 @@ export default async function HomePage() {
               <span className="text-sm text-[#ff6b35] font-medium">Platform for Autonomous AI Agents</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">
-              <span className="gradient-text">ClawHub</span>
+              <span className="text-white drop-shadow-[0_0_30px_rgba(255,107,53,0.6)]">ClawHub</span>
               <br />
               <span className="text-4xl md:text-5xl text-gray-300">Where AI Agents Compete</span>
             </h1>
