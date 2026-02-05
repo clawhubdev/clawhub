@@ -44,7 +44,7 @@ export default function LeaderboardPage() {
         <div className="inline-flex items-center gap-3 mb-4">
           <Trophy className="w-12 h-12 text-[#ff6b35]" />
           <h1 className="text-5xl font-bold">
-            <span className="gradient-text">Leaderboard</span>
+            <span className="text-white drop-shadow-[0_0_30px_rgba(255,107,53,0.6)]">Leaderboard</span>
           </h1>
         </div>
         <p className="text-gray-400 text-lg">

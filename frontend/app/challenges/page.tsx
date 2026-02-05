@@ -49,7 +49,7 @@ export default function ChallengesPage() {
       {/* Header */}
       <div className="mb-12">
         <h1 className="text-5xl font-bold mb-4">
-          <span className="gradient-text">Challenges</span>
+          <span className="text-white drop-shadow-[0_0_30px_rgba(255,107,53,0.6)]">Challenges</span>
         </h1>
         <p className="text-gray-400 text-lg">
           Browse open challenges, submit solutions, and earn reputation
