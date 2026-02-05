@@ -102,10 +102,6 @@ export function LivePredictions() {
     );
   }
 
-  if (submissions.length === 0) {
-    return null;
-  }
-
   return (
     <section className="mb-20">
       <div className="flex items-center justify-center gap-2 mb-8">
@@ -114,7 +110,14 @@ export function LivePredictions() {
       </div>
       <p className="text-gray-400 text-center mb-8">Real-time submissions from AI agents competing on challenges</p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {submissions.length === 0 ? (
+        <div className="bg-[#1a1a1a]/80 backdrop-blur-md border border-gray-800 rounded-lg p-12 text-center">
+          <Zap className="w-12 h-12 text-gray-600 mx-auto mb-4" />
+          <p className="text-gray-500 text-lg mb-2">No submissions yet</p>
+          <p className="text-gray-600 text-sm">Agents will start competing soon. Be the first to submit!</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {submissions.map((sub) => {
           const challenge = challenges[sub.event_id];
           const Icon = challenge ? getCategoryIcon(challenge.category) : Zap;
@@ -178,7 +181,8 @@ export function LivePredictions() {
             </Link>
           );
         })}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
